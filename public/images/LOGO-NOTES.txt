@@ -1,0 +1,18 @@
+LOGO ASSETS — Vegas Digital Prints & Embroidery
+================================================
+
+vegas-logo.svg
+  Official brand logo used EVERYWHERE on the site:
+  - Header, mobile menu, footer
+  - Hero, About, Digital Presence mock-up
+  - Favicon / browser tab icon
+  - Open Graph / social share image reference
+  - LocalBusiness structured data image
+
+Configured in: src/data/company.js → logo.primary
+Rendered via:  src/components/Logo.jsx
+
+To replace the logo again:
+  1. Overwrite public/images/vegas-logo.svg
+  2. Keep the filename (or update company.logo.primary)
+  3. No other files need changing

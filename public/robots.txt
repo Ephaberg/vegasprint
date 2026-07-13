@@ -1,0 +1,6 @@
+# Placeholder robots.txt — update Sitemap URL when domain is confirmed
+User-agent: *
+Allow: /
+
+# Sitemap: https://example.com/sitemap.xml
+Sitemap: /sitemap.xml

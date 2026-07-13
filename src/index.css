@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #c8102e;
+  --color-brand-red-dark: #9e0c24;
+  --color-brand-red-light: #e83a4f;
+  --color-brand-blue: #1e5fd4;
+  --color-brand-blue-dark: #1548a8;
+  --color-brand-blue-light: #3d7aef;
+  --color-brand-black: #0a0a0c;
+  --color-brand-charcoal: #16161a;
+  --color-brand-ink: #1f1f24;
+  --color-brand-muted: #5c5c66;
+  --color-brand-grey: #f5f5f6;
+  --color-brand-grey-mid: #e6e6ea;
+  --color-brand-border: #d4d4d8;
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-display: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    @apply bg-white text-brand-ink font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-blue;
+  }
+
+  ::selection {
+    @apply bg-brand-blue/20 text-brand-black;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-brand-black font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-brand-red text-white hover:bg-brand-red-dark focus-visible:outline-brand-red;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-brand-blue text-white hover:bg-brand-blue-dark focus-visible:outline-brand-blue;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50 border-2 border-white bg-transparent text-white hover:bg-white/10 focus-visible:outline-white;
+  }
+
+  .btn-outline-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50 border-2 border-brand-black bg-transparent text-brand-black hover:bg-brand-black hover:text-white focus-visible:outline-brand-black;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white text-brand-black hover:bg-brand-grey focus-visible:outline-brand-blue;
+  }
+
+  .section-label {
+    @apply text-xs font-bold uppercase tracking-[0.16em] text-brand-red;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-brand-border/80 bg-white shadow-sm;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border border-brand-border bg-white px-3.5 py-2.5 text-sm text-brand-ink shadow-sm transition placeholder:text-brand-muted/70 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 focus:outline-none;
+  }
+
+  .input-field[aria-invalid="true"] {
+    @apply border-brand-red focus:border-brand-red focus:ring-brand-red/20;
+  }
+
+  .label-field {
+    @apply mb-1.5 block text-sm font-medium text-brand-charcoal;
+  }
+
+  .error-text {
+    @apply mt-1 text-xs font-medium text-brand-red;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+  overflow: visible;
+  white-space: normal;
+  border-radius: 0.5rem;
+  background-color: var(--color-brand-blue);
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
