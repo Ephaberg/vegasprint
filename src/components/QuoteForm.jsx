@@ -125,12 +125,12 @@ export default function QuoteForm() {
     <section id="quote" className="section-padding bg-white" aria-labelledby="quote-heading">
       <div className="container-page max-w-3xl">
         <SectionHeading
-          label="Quotations"
-          title="Request a Quotation"
-          description="Share a few details about your project. This is a frontend demonstration — submissions are not sent to a live system."
+          label="Client Request"
+          title="Send a Client Request"
+          description="Share the service, quantity, colours, design and deadline so Vegas Digital Prints can prepare the next step."
         />
         <h2 id="quote-heading" className="sr-only">
-          Request a Quotation
+          Send a Client Request
         </h2>
 
         {submitted ? (
@@ -142,12 +142,12 @@ export default function QuoteForm() {
             <CheckCircle2 className="mx-auto h-12 w-12 text-brand-blue" aria-hidden="true" />
             <h3 className="mt-4 text-xl font-semibold text-brand-black">Thank you</h3>
             <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-brand-muted sm:text-base">
-              Thank you. This demonstration shows how a quotation request could be submitted. The
+              Thank you. This demonstration shows how a client request could be submitted. The
               production website will connect this form to the company&apos;s official communication
               system.
             </p>
             <button type="button" className="btn-primary mt-6" onClick={() => setSubmitted(false)}>
-              Submit another demo request
+              Send another request
             </button>
           </div>
         ) : (
@@ -158,8 +158,7 @@ export default function QuoteForm() {
             aria-describedby="quote-demo-note"
           >
             <p id="quote-demo-note" className="rounded-lg bg-brand-grey px-3 py-2 text-xs text-brand-muted">
-              Demo mode: nothing is stored or emailed. Uploaded files stay only in your browser
-              session and are discarded after this form resets.
+              contact info
             </p>
 
             <div className="grid gap-5 sm:grid-cols-2">
@@ -250,7 +249,7 @@ export default function QuoteForm() {
 
             <div>
               <label htmlFor="service" className="label-field">
-                Service required <span className="text-brand-red">*</span>
+                Service needed <span className="text-brand-red">*</span>
               </label>
               <select
                 id="service"
@@ -384,7 +383,7 @@ export default function QuoteForm() {
                   <span className="mt-2 text-sm font-medium text-brand-ink">
                     Choose a file (PNG, JPG, PDF, AI — max 5 MB)
                   </span>
-                  <span className="mt-1 text-xs text-brand-muted">Demo only — not uploaded to a server</span>
+                  <span className="mt-1 text-xs text-brand-muted"></span>
                   <input
                     id="artwork"
                     name="artwork"
@@ -488,7 +487,7 @@ export default function QuoteForm() {
             </div>
 
             <button type="submit" className="btn-primary w-full sm:w-auto sm:min-w-[12rem]">
-              Submit quotation request
+              Submit client request
             </button>
           </form>
         )}

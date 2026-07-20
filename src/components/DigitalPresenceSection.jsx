@@ -12,7 +12,7 @@ export default function DigitalPresenceSection() {
             <SectionHeading
               align="left"
               label="Digital Presence"
-              title="Taking Great Printing Services Into the Digital Era"
+              title="Taking Textile Production Into the Digital Era"
               className="mb-6"
             />
             <h2 id="digital-heading" className="sr-only">
@@ -21,12 +21,12 @@ export default function DigitalPresenceSection() {
             <p className="text-base leading-relaxed text-brand-muted sm:text-lg">
               Customers increasingly search online before contacting a business. A professional
               website and Google Business Profile can make it easier for customers to discover
-              Vegas Digital Prints &amp; Embroidery, view available services, locate the business
+              Vegas Digital Prints, view textile training and production services, locate the business
               and request quotations.
             </p>
             <ul className="mt-6 space-y-3">
               {[
-                'Appear when customers search for printing and embroidery nearby',
+                'Appear when customers search for cloth printing, embroidery or textile training nearby',
                 'Show services, photos and opening hours in one place',
                 'Make quotation requests simple from phone or laptop',
                 'Build trust before the first phone call or WhatsApp message',
@@ -48,7 +48,7 @@ export default function DigitalPresenceSection() {
               <div className="border-b border-brand-border bg-brand-charcoal px-4 py-3">
                 <div className="flex items-center gap-2 rounded-lg bg-white/10 px-3 py-2 text-sm text-white/80">
                   <Search className="h-4 w-4 shrink-0" aria-hidden="true" />
-                  <span className="truncate">printing embroidery near me · Ghana</span>
+                  <span className="truncate">cloth printing embroidery training · Ghana</span>
                 </div>
               </div>
 
@@ -59,7 +59,7 @@ export default function DigitalPresenceSection() {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold text-brand-black">{company.legalName}</p>
-                    <p className="text-sm text-brand-muted">Printing · Embroidery · Branding</p>
+                    <p className="text-sm text-brand-muted">Textile Training · Digital Print · Embroidery</p>
                     <div className="mt-1 flex items-center gap-1 text-amber-500" aria-hidden="true">
                       {[1, 2, 3, 4, 5].map((n) => (
                         <Star key={n} className="h-3.5 w-3.5 fill-current" />

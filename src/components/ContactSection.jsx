@@ -37,7 +37,7 @@ export default function ContactSection() {
         <SectionHeading
           label="Contact"
           title="Contact and Location"
-          description="Editable placeholders are shown until management confirms official contact details and creates a Google Business Profile."
+          description="Call, WhatsApp or email Vegas Digital Prints, visit the center in Ho, Dabrah, Ghana, or stop by between 8:00 AM and 5:00 PM."
         />
         <h2 id="contact-heading" className="sr-only">
           Contact and Location
@@ -50,11 +50,15 @@ export default function ContactSection() {
               <div>
                 <h3 className="text-sm font-semibold text-brand-black">Business address</h3>
                 <p className="mt-1 text-sm leading-relaxed text-brand-muted">
-                  <Placeholder>{company.address.line1}</Placeholder>
+                  {company.address.line1}
+                  {company.address.line2 ? (
+                    <>
+                      <br />
+                      {company.address.line2}
+                    </>
+                  ) : null}
                   <br />
-                  <Placeholder>{company.address.line2}</Placeholder>
-                  <br />
-                  <Placeholder>{company.address.city}</Placeholder>, {company.address.region}
+                  {company.address.city}, {company.address.region}
                 </p>
               </div>
             </div>
@@ -120,7 +124,7 @@ export default function ContactSection() {
                   {company.hours.map((row) => (
                     <li key={row.day} className="flex flex-wrap gap-x-2">
                       <span className="font-medium text-brand-ink">{row.day}:</span>
-                      <Placeholder>{row.time}</Placeholder>
+                      <span>{row.time}</span>
                     </li>
                   ))}
                 </ul>
@@ -187,7 +191,7 @@ export default function ContactSection() {
               <MapPin className="h-10 w-10 text-brand-red" aria-hidden="true" />
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/85">
                 Google Maps location will appear here after the company confirms its official
-                address and creates its Google Business Profile.
+                map link and creates its Google Business Profile.
               </p>
               <p className="mt-3 text-xs font-medium uppercase tracking-wider text-white/50">
                 Map placeholder

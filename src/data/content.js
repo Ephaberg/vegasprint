@@ -1,147 +1,98 @@
+export const frontPageServices = [
+  {
+    id: 'embroidery-works',
+    title: 'Embroidery Works',
+    text: 'Neat stitched logos, names and designs for uniforms, caps, polos, school wear and gifts.',
+    image: 'https://www.laurelin.co.uk/cdn/shop/products/Goldwork_Flying_Free.jpg?v=1631101275&width=1445',
+  },
+  {
+    id: 'dtf-printing',
+    title: 'DTF Printing',
+    text: 'Direct-to-film prints for bold designs on shirts, apparel and branded textile pieces.',
+    image: 'https://banderaz.co.za/wp-content/uploads/2025/03/DTF-A3-hero.webp',
+  },
+  {
+    id: 'sublimation-printing',
+    title: 'Sublimation Printing',
+    text: 'Bright, smooth colour transfer for jerseys, event wear, school cloth and custom apparel.',
+    image: 'https://greatafrican-tshirts.co.za/wp-content/uploads/2018/03/sublimation-printing-t-shirt.jpg',
+  },
+]
+
 export const brandValues = [
   {
     id: 'quality',
-    title: 'Quality Craftsmanship',
-    text: 'Careful finishing on every piece so your brand looks sharp on fabric, print and promotional materials.',
+    title: 'Clean Finishing',
+    text: 'Careful stitching, printing and colour work so every textile piece looks professional.',
   },
   {
     id: 'creative',
-    title: 'Creative Solutions',
-    text: 'Practical ideas that turn sketches, logos and campaign themes into products people notice and use.',
+    title: 'Design Support',
+    text: 'Support for artwork, fabric ideas, colour choices and production-ready textile designs.',
   },
   {
     id: 'service',
-    title: 'Reliable Customer Service',
-    text: 'Clear updates on timelines, quotations and production so you always know where your order stands.',
+    title: 'Training Heritage',
+    text: 'A batik and tie-dye training background strengthened by modern digital print technology.',
+  },
+]
+
+export const visionMission = [
+  {
+    id: 'vision',
+    title: 'Vision',
+    text: 'To empower individuals with traditional and innovative textile techniques that support creativity, culture, design and economic opportunity.',
+  },
+  {
+    id: 'mission',
+    title: 'Mission',
+    text: 'To provide quality textile production and hands-on skills training using batik, tie-dye, embroidery and modern digital printing methods.',
   },
 ]
 
 export const whyChooseUs = [
   {
-    id: 'finishing',
-    title: 'Professional finishing',
-    text: 'Clean edges, accurate colour and durable application that reflect well on your brand.',
+    id: 'heritage',
+    title: 'Training background',
+    text: 'Established from the Vegas Batik Tie and Dye Training Center, with formal registration in 2021.',
+  },
+  {
+    id: 'technology',
+    title: 'Modern methods',
+    text: 'Embroidery, DTF, sublimation and digital cloth printing add speed, value and accuracy.',
   },
   {
     id: 'custom',
-    title: 'Custom designs',
-    text: 'Work from your artwork or request support preparing files ready for print and embroidery.',
-  },
-  {
-    id: 'orders',
-    title: 'Individual and bulk orders',
-    text: 'From a single personalised item to larger team or event runs — we scale with your need.',
-  },
-  {
-    id: 'communication',
-    title: 'Clear communication',
-    text: 'Straightforward quotations and status updates so decisions stay simple.',
-  },
-  {
-    id: 'detail',
-    title: 'Attention to detail',
-    text: 'Placement, sizing and colour choices reviewed carefully before production begins.',
-  },
-  {
-    id: 'audiences',
-    title: 'Built for many audiences',
-    text: 'Solutions for businesses, events, schools, churches and organisations across Ghana.',
-  },
-]
-
-export const processSteps = [
-  {
-    step: 1,
-    title: 'Tell Us What You Need',
-    text: 'Share the product type, quantity, deadline and any brand guidelines you already have.',
-  },
-  {
-    step: 2,
-    title: 'Share Your Design or Request Design Support',
-    text: 'Send logo files or artwork, or ask us to help prepare print-ready designs.',
-  },
-  {
-    step: 3,
-    title: 'Review and Approve the Quotation',
-    text: 'Receive a clear quote covering options, timing and costs before work starts.',
-  },
-  {
-    step: 4,
-    title: 'Production and Collection/Delivery',
-    text: 'We produce your order and arrange collection or delivery as agreed.',
-  },
-]
-
-export const customerSegments = [
-  {
-    id: 'businesses',
-    title: 'Businesses',
-    text: 'Staff wear, client gifts and campaign materials that present a consistent brand.',
-  },
-  {
-    id: 'schools',
-    title: 'Schools',
-    text: 'House shirts, sports kits, PTA events and anniversary merchandise.',
-  },
-  {
-    id: 'churches',
-    title: 'Churches',
-    text: 'Choir wear, conference branding, outreach tees and ministry merchandise.',
-  },
-  {
-    id: 'events',
-    title: 'Event Organisers',
-    text: 'Banners, staff tees, lanyards and on-site promotional pieces.',
-  },
-  {
-    id: 'sports',
-    title: 'Sports Teams',
-    text: 'Team kits, training wear and supporter merch with club marks.',
-  },
-  {
-    id: 'fashion',
-    title: 'Fashion Brands',
-    text: 'Small-batch runs and branded apparel to support growing labels.',
-  },
-  {
-    id: 'individuals',
-    title: 'Individuals',
-    text: 'Personal gifts, family reunions, birthdays and one-off custom pieces.',
-  },
-  {
-    id: 'nonprofit',
-    title: 'Non-profit Organisations',
-    text: 'Campaign materials and volunteer wear that communicate your mission clearly.',
+    title: 'Custom orders',
+    text: 'Work for individuals, schools, churches, organisations and corporate institutions.',
   },
 ]
 
 export const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About Us' },
-  { href: '#services', label: 'Services' },
-  { href: '#work', label: 'Our Work' },
-  { href: '#how-it-works', label: 'How It Works' },
-  { href: '#contact', label: 'Contact' },
+  { path: '/', label: 'Home' },
+  { path: '/about', label: 'About' },
+  { path: '/services', label: 'Services' },
+  { path: '/request', label: 'Client Request' },
 ]
 
 export const quoteServiceOptions = [
-  'Digital Printing',
-  'Custom Embroidery',
-  'T-Shirt Printing',
-  'Corporate Branding',
-  'Large-Format Printing',
-  'Promotional Products',
-  'Uniform and Workwear Branding',
-  'Graphic Design and Artwork Preparation',
+  'Embroidery Works',
+  'DTF Printing',
+  'Sublimation Printing',
+  'Digital Cloth Printing',
+  'Batik and Tie-Dye Training',
+  'Screen Printing',
+  'School, Church and Corporate Branding',
+  'Finished Textile Products',
   'Other / Not sure yet',
 ]
 
 export const budgetRanges = [
   'Prefer not to say',
   'Under GHS 500',
-  'GHS 500 – 1,500',
-  'GHS 1,500 – 5,000',
-  'GHS 5,000 – 15,000',
+  'GHS 500 - 1,500',
+  'GHS 1,500 - 5,000',
+  'GHS 5,000 - 15,000',
   'Above GHS 15,000',
 ]
 

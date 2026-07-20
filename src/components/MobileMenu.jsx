@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import { X } from 'lucide-react'
 import { navLinks } from '../data/content'
 import Logo from './Logo'
 
-export default function MobileMenu({ open, onClose, onNavigate }) {
+export default function MobileMenu({ open, onClose }) {
   useEffect(() => {
     if (!open) return
     const prev = document.body.style.overflow
@@ -21,7 +22,7 @@ export default function MobileMenu({ open, onClose, onNavigate }) {
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div id="mobile-menu" className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
       <button
         type="button"
         className="absolute inset-0 bg-brand-black/50"
@@ -30,9 +31,9 @@ export default function MobileMenu({ open, onClose, onNavigate }) {
       />
       <div className="absolute right-0 top-0 flex h-full w-[min(100%,22rem)] flex-col bg-white shadow-2xl">
         <div className="flex items-center justify-between border-b border-brand-border px-4 py-4">
-          <div className="flex min-w-0 items-center gap-2">
+          <Link to="/" onClick={onClose} className="flex min-w-0 items-center gap-2">
             <Logo height={36} decorative className="shrink-0" />
-          </div>
+          </Link>
           <button
             type="button"
             onClick={onClose}
@@ -45,31 +46,26 @@ export default function MobileMenu({ open, onClose, onNavigate }) {
 
         <nav className="flex flex-1 flex-col gap-1 overflow-y-auto p-4" aria-label="Mobile">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => {
-                e.preventDefault()
-                onNavigate(link.href)
-              }}
-              className="rounded-lg px-3 py-3 text-base font-medium text-brand-ink hover:bg-brand-grey focus-visible:outline-2 focus-visible:outline-brand-blue"
+            <NavLink
+              key={link.path}
+              to={link.path}
+              end={link.path === '/'}
+              onClick={onClose}
+              className={({ isActive }) =>
+                `rounded-lg px-3 py-3 text-base font-medium focus-visible:outline-2 focus-visible:outline-brand-blue ${
+                  isActive ? 'bg-brand-grey text-brand-black' : 'text-brand-ink hover:bg-brand-grey'
+                }`
+              }
             >
               {link.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
         <div className="border-t border-brand-border p-4">
-          <a
-            href="#quote"
-            onClick={(e) => {
-              e.preventDefault()
-              onNavigate('#quote')
-            }}
-            className="btn-primary w-full"
-          >
-            Request a Quote
-          </a>
+          <Link to="/request" onClick={onClose} className="btn-primary w-full">
+            Client Request
+          </Link>
         </div>
       </div>
     </div>

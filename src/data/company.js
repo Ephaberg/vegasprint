@@ -9,30 +9,31 @@
  */
 
 export const company = {
-  legalName: 'Vegas Digital Prints & Embroidery',
+  legalName: 'Vegas Digital Prints',
   shortName: 'Vegas Digital Prints',
-  tagline: 'Taking Your Cloth Printing To Digital Level',
+  formerName: 'Vegas Batik Tie and Dye Training Center',
+  tagline: 'Taking Your Cloth Printing to the Digital Level',
   description:
-    'Creative printing, embroidery and branding solutions for individuals, schools, churches, organisations and businesses in Ghana.',
+    'Embroidery works, DTF printing, sublimation, digital cloth printing and textile training for individuals, schools, churches, organisations and corporate institutions in Ghana.',
 
   /**
-   * PLACEHOLDERS — replace with confirmed details before launch.
-   * Leave as-is for the management demonstration.
+   * Contact details confirmed by management. Update here if the primary
+   * phone, WhatsApp, email or location changes.
    */
   contact: {
-    phone: '[Phone number to be confirmed]',
-    phoneHref: '', // e.g. 'tel:+233XXXXXXXXX'
-    whatsapp: '[WhatsApp number to be confirmed]',
+    phone: '024 040 9144 / 024 423 0731',
+    phoneHref: 'tel:+233240409144',
+    whatsapp: '024 040 9144',
     /** Digits only, country code included, no + or spaces. Used for wa.me links. */
-    whatsappNumber: '', // e.g. '233XXXXXXXXX'
-    email: '[Email address to be confirmed]',
-    emailHref: '', // e.g. 'mailto:info@example.com'
+    whatsappNumber: '233240409144',
+    email: 'patricatagbor@gmail.com',
+    emailHref: 'mailto:patricatagbor@gmail.com',
   },
 
   address: {
-    line1: '[Street address to be confirmed]',
-    line2: '[Suburb / area to be confirmed]',
-    city: '[City to be confirmed]',
+    line1: 'Dabrah',
+    line2: '',
+    city: 'Ho',
     region: 'Ghana',
     /** Optional Google Maps embed URL once GBP is live */
     mapsEmbedUrl: '',
@@ -40,9 +41,9 @@ export const company = {
   },
 
   hours: [
-    { day: 'Monday – Friday', time: '[Opening hours to be confirmed]' },
-    { day: 'Saturday', time: '[Opening hours to be confirmed]' },
-    { day: 'Sunday', time: '[Opening hours to be confirmed]' },
+    { day: 'Monday - Friday', time: '8:00 AM - 5:00 PM' },
+    { day: 'Saturday', time: '8:00 AM - 5:00 PM' },
+    { day: 'Sunday', time: '8:00 AM - 5:00 PM' },
   ],
 
   social: {
@@ -62,9 +63,9 @@ export const company = {
   },
 
   seo: {
-    title: 'Vegas Digital Prints & Embroidery | Printing & Branding in Ghana',
+    title: 'Vegas Digital Prints | Embroidery, DTF & Sublimation in Ho',
     description:
-      'Professional digital printing, custom embroidery, apparel branding and promotional solutions. Request a free quotation from Vegas Digital Prints & Embroidery.',
+      'Embroidery works, DTF printing, sublimation, digital cloth printing and textile training in Ho, Dabrah, Ghana.',
     siteUrl: 'https://example.com', // update when domain is confirmed
     locale: 'en_GH',
     ogImage: '/images/vegas-logo.svg',
@@ -72,7 +73,7 @@ export const company = {
 
   demo: {
     isDemo: true,
-    bannerLabel: 'Concept Website – Prepared for Vegas Digital Prints & Embroidery',
+    bannerLabel: 'Prepared for Vegas Digital Prints',
     portfolioDisclaimer:
       'Sample Presentation – Replace with Actual Company Projects',
   },

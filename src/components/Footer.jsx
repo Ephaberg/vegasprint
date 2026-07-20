@@ -26,33 +26,22 @@ export default function Footer() {
 
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-1">
-          <div className="flex items-center rounded-lg bg-white/95 px-3 py-2">
+          <div className="flex items-center rounded-lg bg-black/95 px-3 py-2">
             <Logo height={48} />
           </div>
           <p className="mt-4 text-sm leading-relaxed text-white/65">{company.description}</p>
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90">Quick links</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90">Pages</h3>
           <ul className="mt-4 space-y-2">
             {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  to={{ pathname: '/', hash: link.href.replace('#', '') }}
-                  className="text-sm text-white/65 transition hover:text-white"
-                >
+              <li key={link.path}>
+                <Link to={link.path} className="text-sm text-white/65 transition hover:text-white">
                   {link.label}
                 </Link>
               </li>
             ))}
-            <li>
-              <Link
-                to={{ pathname: '/', hash: 'quote' }}
-                className="text-sm text-white/65 transition hover:text-white"
-              >
-                Request a Quote
-              </Link>
-            </li>
           </ul>
         </div>
 
@@ -61,10 +50,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2">
             {services.slice(0, 6).map((s) => (
               <li key={s.id}>
-                <Link
-                  to={{ pathname: '/', hash: 'services' }}
-                  className="text-sm text-white/65 transition hover:text-white"
-                >
+                <Link to="/services" className="text-sm text-white/65 transition hover:text-white">
                   {s.title}
                 </Link>
               </li>
@@ -83,70 +69,34 @@ export default function Footer() {
               <br />
               {company.address.city}, {company.address.region}
             </li>
+            <li>{company.hours[0]?.time}</li>
           </ul>
           <div className="mt-4 flex gap-2">
             {company.social.instagram ? (
-              <a
-                href={company.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg bg-white/10 p-2 hover:bg-white/20"
-                aria-label="Instagram"
-              >
+              <a href={company.social.instagram} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-white/10 p-2 hover:bg-white/20" aria-label="Instagram">
                 <Instagram className="h-4 w-4" />
               </a>
-            ) : (
-              <span className="rounded-lg bg-white/5 p-2 text-white/40" aria-label="Instagram placeholder">
-                <Instagram className="h-4 w-4" />
-              </span>
-            )}
+            ) : null}
             {company.social.facebook ? (
-              <a
-                href={company.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg bg-white/10 p-2 hover:bg-white/20"
-                aria-label="Facebook"
-              >
+              <a href={company.social.facebook} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-white/10 p-2 hover:bg-white/20" aria-label="Facebook">
                 <Facebook className="h-4 w-4" />
               </a>
-            ) : (
-              <span className="rounded-lg bg-white/5 p-2 text-white/40" aria-label="Facebook placeholder">
-                <Facebook className="h-4 w-4" />
-              </span>
-            )}
+            ) : null}
             {company.social.tiktok ? (
-              <a
-                href={company.social.tiktok}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg bg-white/10 p-2 hover:bg-white/20"
-                aria-label="TikTok"
-              >
+              <a href={company.social.tiktok} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-white/10 p-2 hover:bg-white/20" aria-label="TikTok">
                 <TikTokIcon className="h-4 w-4" />
               </a>
-            ) : (
-              <span className="rounded-lg bg-white/5 p-2 text-white/40" aria-label="TikTok placeholder">
-                <TikTokIcon className="h-4 w-4" />
-              </span>
-            )}
+            ) : null}
           </div>
         </div>
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-page flex flex-col items-center justify-between gap-3 py-5 text-center text-xs text-white/50 sm:flex-row sm:text-left">
+        <div className="container-page flex flex-col items-center justify-between gap-2 py-5 text-center text-xs text-white/50 sm:flex-row sm:text-left">
           <p>
             © {year} {company.legalName}. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link to="/privacy" className="hover:text-white">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="hover:text-white">
-              Terms and Conditions
-            </Link>
-          </div>
+          <p>Designed by Priscy</p>
         </div>
       </div>
     </footer>

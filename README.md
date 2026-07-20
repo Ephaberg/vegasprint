@@ -1,10 +1,10 @@
-# Vegas Digital Prints & Embroidery — Concept Website
+# Vegas Digital Prints — Concept Website
 
-A polished, fully responsive **frontend demonstration** for **Vegas Digital Prints & Embroidery**, a Ghanaian printing, embroidery and branding business.
+A polished, fully responsive **frontend demonstration** for **Vegas Digital Prints**, a Ghanaian textile training, cloth printing, embroidery and branding organization.
 
 Built to present to management why a professional digital presence matters — and how the company can look online once contact details, location and real project photography are confirmed.
 
-> **Concept Website – Prepared for Vegas Digital Prints & Embroidery**  
+> **Concept Website – Prepared for Vegas Digital Prints**  
 > Frontend only. No backend, database, authentication or payments.
 
 ---
@@ -51,7 +51,7 @@ vegasprint/
 │   │   ├── vegas-logo.svg          # Primary logo (vector recreation)
 │   │   ├── vegas-logo-photo.png    # Cropped photo of physical sticker
 │   │   ├── favicon-*.png
-│   │   └── portfolio/              # Slot for real project photos
+│   │   └── services/               # Slot for service gallery photos
 │   ├── robots.txt
 │   └── sitemap.xml
 ├── src/
@@ -116,28 +116,28 @@ The source photo of the sticker was taken on equipment that also showed an inter
 
 ---
 
-## Replacing portfolio images
+## Replacing service gallery images
 
-1. Add real project photos to `public/images/portfolio/` using clear names, e.g. `embroidery-cap-client.jpg`.
-2. Edit [`src/data/portfolio.js`](./src/data/portfolio.js):
-   - Set `image` to `/images/portfolio/your-file.jpg`
-   - Update `title`, `description` and `alt`
-   - Remove the demo disclaimer copy when everything is real work
-3. In `company.demo`, set `portfolioDisclaimer` empty or turn off demo labels when ready for production.
+1. Add real service photos to `public/images/services/` using clear names, e.g. `batik-tie-dye.jpg` or `dtf-printing.jpg`.
+2. Edit `serviceGallery` in [`src/data/services.js`](./src/data/services.js):
+   - Set `image` to `/images/services/your-file.jpg`
+   - Update `title`, `category` and `alt` if needed
+   - Keep any image slot blank until a real photo is ready
+3. Rebuild the site after adding images.
 
-Current gallery images are **Unsplash placeholders**. The UI labels the section as sample presentation only.
+Blank gallery image fields render as labelled service placeholders until real photos are added.
 
 ---
 
 ## Features
 
 - Sticky compact header + accessible mobile menu
-- Hero, services, about, why choose us, portfolio, process, audiences
-- Digital presence / Google Business Profile concept section
-- Quotation form with validation, file preview, demo success state
-- Contact placeholders + map placeholder
+- Four main pages: Home, About, Services and Client Request
+- Front page highlights for embroidery works, DTF printing and sublimation
+- Client request form with validation, file preview and demo success state
+- Confirmed phone, WhatsApp, email, location and opening hours
 - Floating WhatsApp + scroll-to-top controls
-- Privacy & Terms placeholder routes
+
 - SEO meta, Open Graph, LocalBusiness JSON-LD (no false address/phone)
 - Reduced-motion support, keyboard focus styles, semantic HTML
 
@@ -145,7 +145,7 @@ Current gallery images are **Unsplash placeholders**. The UI labels the section 
 
 ## Form behaviour (demo)
 
-Submitting the quotation form:
+Submitting the client request form:
 
 - Validates required fields
 - Does **not** send data to a server
@@ -161,7 +161,7 @@ Wire `VITE_QUOTE_API_URL` (see `.env.example`) when a backend is ready.
 - Skip link, landmarks, labelled form controls
 - Visible `:focus-visible` rings
 - Lightbox and mobile menu close with `Escape`
-- Lazy-loaded portfolio images
+- Lazy-loaded service gallery images
 - Colour palette derived from brand red / royal blue / black / white / grey
 
 ---
@@ -172,15 +172,15 @@ Recommended walkthrough:
 
 1. **Laptop + phone** — show responsive layout
 2. **Services & process** — how customers understand the offer
-3. **Portfolio** — explain real photos will replace samples
-4. **Quote form** — how leads can be captured
-5. **Digital presence section** — website + Google Business Profile opportunity
+3. **Service gallery** - show where real Batik, DTF, Sublimation and Embroidery photos will appear
+4. **Client Request** - how leads can be captured
+5. **PLACEHOLDERS.md** - remaining details and image slots
 6. **PLACEHOLDERS.md** — list of details they need to supply
 
 ---
 
 ## Licence / assets
 
-- Site code: prepared for Vegas Digital Prints & Embroidery presentation use
+- Site code: prepared for Vegas Digital Prints presentation use
 - Unsplash images: free licence; replace with owned photography for production
 - Logo mark: brand property of Vegas Digital Prints; vector file is a recreation for demo UI only

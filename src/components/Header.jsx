@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { Menu } from 'lucide-react'
-import { company } from '../data/company'
 import { navLinks } from '../data/content'
 import { useScrollPosition } from '../hooks/useScrollPosition'
 import MobileMenu from './MobileMenu'
@@ -10,26 +9,6 @@ import Logo from './Logo'
 export default function Header() {
   const scrolled = useScrollPosition(20)
   const [menuOpen, setMenuOpen] = useState(false)
-  const location = useLocation()
-  const navigate = useNavigate()
-
-  const handleNavigate = (href) => {
-    setMenuOpen(false)
-    const go = () => {
-      const id = href.replace('#', '')
-      const el = document.getElementById(id)
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        history.replaceState(null, '', href)
-      }
-    }
-
-    if (location.pathname !== '/') {
-      navigate({ pathname: '/', hash: href.replace(/^#/, '') })
-      return
-    }
-    requestAnimationFrame(go)
-  }
 
   return (
     <>
@@ -41,52 +20,42 @@ export default function Header() {
         }`}
       >
         <div className="container-page flex items-center justify-between gap-4">
-          <a
-            href="#home"
-            onClick={(e) => {
-              e.preventDefault()
-              handleNavigate('#home')
-            }}
+          <Link
+            to="/"
             className="flex min-w-0 items-center gap-2.5 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+            aria-label="Vegas Digital Prints home"
           >
-            <Logo
-              height={scrolled ? 36 : 44}
-              className="shrink-0 transition-all"
-            />
+            <Logo height={scrolled ? 36 : 44} className="shrink-0 transition-all" />
             <span className="min-w-0 sm:hidden">
               <span className="block truncate text-sm font-bold leading-tight text-brand-black">
                 Vegas Digital Prints
               </span>
             </span>
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleNavigate(link.href)
-                }}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-brand-ink transition hover:bg-brand-grey hover:text-brand-black focus-visible:outline-2 focus-visible:outline-brand-blue"
+              <NavLink
+                key={link.path}
+                to={link.path}
+                end={link.path === '/'}
+                className={({ isActive }) =>
+                  `rounded-lg px-3 py-2 text-sm font-medium transition focus-visible:outline-2 focus-visible:outline-brand-blue ${
+                    isActive
+                      ? 'bg-brand-grey text-brand-black'
+                      : 'text-brand-ink hover:bg-brand-grey hover:text-brand-black'
+                  }`
+                }
               >
                 {link.label}
-              </a>
+              </NavLink>
             ))}
           </nav>
 
           <div className="flex items-center gap-2">
-            <a
-              href="#quote"
-              onClick={(e) => {
-                e.preventDefault()
-                handleNavigate('#quote')
-              }}
-              className="btn-primary hidden px-4 py-2.5 text-sm sm:inline-flex"
-            >
-              Request a Quote
-            </a>
+            <Link to="/request" className="btn-primary hidden px-4 py-2.5 text-sm sm:inline-flex">
+              Client Request
+            </Link>
             <button
               type="button"
               className="inline-flex items-center justify-center rounded-lg p-2.5 text-brand-ink hover:bg-brand-grey focus-visible:outline-2 focus-visible:outline-brand-blue lg:hidden"
@@ -101,7 +70,7 @@ export default function Header() {
         </div>
       </header>
 
-      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} onNavigate={handleNavigate} />
+      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
     </>
   )
 }

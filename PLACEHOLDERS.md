@@ -6,22 +6,22 @@ This concept website deliberately avoids inventing business details. Update the 
 
 | Field | Where to edit | Status |
 | --- | --- | --- |
-| Telephone number | `src/data/company.js` → `contact.phone` + `phoneHref` | Placeholder |
-| WhatsApp number | `src/data/company.js` → `contact.whatsapp` + `whatsappNumber` | Placeholder |
-| Email address | `src/data/company.js` → `contact.email` + `emailHref` | Placeholder |
+| Telephone number | `src/data/company.js` → `contact.phone` + `phoneHref` | Confirmed |
+| WhatsApp number | `src/data/company.js` → `contact.whatsapp` + `whatsappNumber` | Confirmed: using 024 040 9144 |
+| Email address | `src/data/company.js` → `contact.email` + `emailHref` | Confirmed |
 
 ## Location
 
 | Field | Where to edit | Status |
 | --- | --- | --- |
-| Street address | `company.address.line1` / `line2` | Placeholder |
-| City / suburb | `company.address.city` | Placeholder |
+| Street address | `company.address.line1` / `line2` | Confirmed: Dabrah |
+| City / suburb | `company.address.city` | Confirmed: Ho, Ghana |
 | Google Maps embed URL | `company.address.mapsEmbedUrl` | Empty until GBP exists |
 | Google Maps link | `company.address.mapsLink` | Empty until confirmed |
 
 ## Opening hours
 
-Edit `company.hours` in `src/data/company.js`.
+Confirmed in `company.hours` as 8:00 AM - 5:00 PM.
 
 ## Social media
 
@@ -38,7 +38,7 @@ Edit `company.hours` in `src/data/company.js`.
 | Primary logo (vector recreation) | `public/images/vegas-logo.svg` | Replace with official transparent SVG/PNG |
 | Photo crop of physical sticker | `public/images/vegas-logo-photo.png` | Reference only; not ideal for print |
 | Favicons | `public/images/favicon-*.png` | Regenerate from official logo |
-| Portfolio images | Unsplash URLs in `src/data/portfolio.js` | Replace with real project photos |
+| Service gallery images | `public/images/services/` + `serviceGallery` in `src/data/services.js` | Add real Batik, DTF, Sublimation, Embroidery and related photos |
 
 ## SEO / domain
 
@@ -50,7 +50,7 @@ Edit `company.hours` in `src/data/company.js`.
 
 ## Content that may be expanded later
 
-- Company history / founding story (About section intentionally omits unverified history)
+- Additional company milestones or founder details beyond the supplied early-2000s founding and 2021 registration history
 - Team photos
 - Real customer project case studies
 - Verified awards or partnerships (none claimed on this demo)
